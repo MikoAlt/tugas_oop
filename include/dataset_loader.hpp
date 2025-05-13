@@ -10,6 +10,27 @@
 #include <city.hpp>        // Definition of the City struct
 #include <csv_parser.hpp>  // Your CsvReader class
 
+/**
+ * @class DatasetLoader
+ * @brief Loads and parses city data from a CSV file.
+ *
+ * The DatasetLoader class provides functionality to read a CSV file containing city information,
+ * parse each row into City objects, and handle missing or malformed data appropriately.
+ *
+ * Usage:
+ *   - Construct with the path to the CSV file.
+ *   - Call loadAndParseCities() to obtain a vector of City objects.
+ *
+ * CSV Format:
+ *   The expected columns are:
+ *     city, city_ascii, lat, lng, country, iso2, iso3, admin_name, capital, population, id
+ *   - 'city_ascii' is used for the city name.
+ *   - Rows with missing population data are skipped.
+ *   - Malformed rows (less than EXPECTED_MIN_COLUMNS) are ignored.
+ *
+ * Exceptions:
+ *   - Throws std::runtime_error if the file cannot be opened or if critical parsing errors occur.
+ */
 class DatasetLoader {
 public:
     // Constructor: takes the path to the CSV file.
