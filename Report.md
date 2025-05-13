@@ -1,7 +1,3 @@
----
-title: 'Report '
-
----
 
 # Tabel Perbandingan
 
