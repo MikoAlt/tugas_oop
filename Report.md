@@ -151,7 +151,7 @@ Perbedaan waktu pada pengolahan data terjadi karena setiap algoritma memiliki ko
 
 - Insertion Sort memiliki Kompleksitas waktu $O(n^2)$ walaupun kompleksitasnya sama tetapi pada data set kecil akan lebih cepat daripada Bubble Sort.
 
-- Merge Sort dan Quick Sort memiliki Kompleksitas waktu $O(n _log_n)$ dan akan optimal untuk data yang besar.
+- Merge Sort dan Quick Sort memiliki Kompleksitas waktu $O(n log_n)$ dan akan optimal untuk data yang besar.
 
 - STD Sort akan Memanfaatkan algoritma yang sudah dioptimasi.
 
