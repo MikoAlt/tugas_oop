@@ -1,5 +1,14 @@
-
 # Tabel Perbandingan
+
+anggota kelompok
+- Ali Reza
+2306211471
+- Fadlin Alwan H H
+2306224335
+- Mikola Syabila
+2306266741
+- Muhammad Alif Iqbal 
+- 2306206654
 
 **Note:**
 Hasil data benchmark yang kami lakukan,  tidak menggunakan compiler Optimization yang akan mempengaruhi waktu proses pengolahan pada semua jenis sorting. 
@@ -43,10 +52,10 @@ Hasil data benchmark yang kami lakukan,  tidak menggunakan compiler Optimization
 Ukuran data yang lebih besar akan membutuhkan waktu pengolahan yang lebih lama. Hal tersebut disebabkan karena semakin banyak data maka semakin banyak elemen yang harus dibandingkan dan diurutkan dan pada pada dataset yang besar algoritma seperti Bubble Sort akan memerlukan lebih banyak iterasi dibandingkan algoritma lain seperti Merge Sort atau STD Sort.
 
 **2. Algoritma Terbaik:**
-STD dan Merge Sort lebih cepat waktu pengolahannya untuk semua ukuran data dibanding yang lain. Hal tersebut terjadi karena keduanya menggunakan pendekatan yang efisien sebagai contoh Merge Sort akan membagi data menjadi bagian-bagian kecil sebelum mengurutkannya, sementara STD  diimplementasikan dengan algoritma yang sudah optimal.
+STD, Quick, Heap, dan Merge sort memiliki performa yang terbaik karena kompleksitas waktu yang lebih rendah, yakni O(n logn). disini STD sort memiliki waktu yang tersingkat diseluruh benchmark karena STD Sort telah dioptimisasi dalam standard library algorithm cpp.
 
 **3. Algoritma Terburuk:**
-Bubble Sort menjadi sorting yang terburuk. Untuk ukuran data yang sangat besar seperti pada contoh yang berukuran 47805, waktu yang dibutuhkan hingga lebih dari 100 detik hal tersebut disebabkan karena algoritma ini akan membandingkan setiap elemen secara berulang tanpa optimasi.
+Bubble Sort menjadi sorting yang terburuk. Untuk ukuran data yang sangat besar seperti pada contoh yang berukuran 47805, waktu yang dibutuhkan hingga lebih dari 100 detik hal tersebut disebabkan karena algoritma ini akan membandingkan setiap elemen secara berulang tanpa optimasi. Kemudian Algoritma terburuk kedua adalah Insertion sort karena kompleksitas waktu keduanya mirip, yakni O(n^2).
 
 ## Tabel dan Analisis untuk Key Sorting "Population" Dengan Data Size yang Berbeda
 ### Key: Population, Data Size: 1000
@@ -85,10 +94,10 @@ Bubble Sort menjadi sorting yang terburuk. Untuk ukuran data yang sangat besar s
 
 ### *Analisis*
 **1. Perbedaan Waktu Pengolahan:**
-Sama seperti key sorting "Name" untuk ukuran data yang lebih besar maka akan mengakibatkan waktu pengolaha yang lebih lama. Namun, pada key Population yang yang datanya berupa angka,  membuat algoritma optimal untuk data numerik, seperti Quick Sort, akan menjadi lebih unggul.
+Sama seperti key sorting "Name" untuk ukuran data yang lebih besar maka akan mengakibatkan waktu pengolaha yang lebih lama. Perbedaan kecepatan sorting antara jenis key berasal dari kecepatan comparing functionnya.
 
 **2. Algoritma Terbaik:**
-Merge Sort dan STD Sort menjadi sorting yang terbaik karena waktu pengolahan yang konsisten, terutama untuk dataset besar.
+STD, Quick, Heap, dan Merge sort menjadi sorting yang terbaik karena waktu pengolahan yang konsisten, terutama untuk dataset besar. STD sort lebih unggul seperti biasa karena telah dioptimisasi dalam standard library.
 
 **3. Algoritma Terburuk:**
 Lagi-lagi, Bubble Sort menjadi sorting yang terburuk. Untuk ukuran data 47805 karena waktu pengolahannya hampir mencapai 93 detik.
@@ -133,7 +142,7 @@ Lagi-lagi, Bubble Sort menjadi sorting yang terburuk. Untuk ukuran data 47805 ka
 Sama dengan key lainnya semakin besar ukuran data maka waktu pengolahan akan meningkat. Namun, karena data Latitude juga berupa angka (seperti population), algoritma numerik seperti Quick Sort memiliki kinerja yang baik.
 
 **2. Algoritma Terbaik:**
-STD dan Merge Sort akan tetap unggul, dengan waktu pengolahan yang cepat bahkan untuk data besar.
+STD, Quick, Heap, dan Merge Sort akan tetap unggul, dengan waktu pengolahan yang cepat bahkan untuk data besar. STD sort tetap unggul di setiap benchmark karena telah dioptimisasi di standard library algorithm.
 
 **3. Algoritma Terburuk:**
 Bubble Sort kembali menjadi jenis sorting yang paling tidak efisien dalam prosesnya bubble sorting membutuhkan waktu lebih dari 86 detik untuk data berukuran 47805.
@@ -143,11 +152,13 @@ Bubble Sort kembali menjadi jenis sorting yang paling tidak efisien dalam proses
 ## Kesimpulan
 Perbedaan waktu pada pengolahan data terjadi karena setiap algoritma memiliki kompleksitas waktu yang berbeda, seperti berikut
 
-- Bubble Sort memiliki Kompleksitas waktu $O(n^2)$ dan karena hal ini bubble sort akan sangat lambat untuk data yang besar.
+- Bubble Sort memiliki Kompleksitas waktu $O(n^2)$ dan karena hal ini bubble sort akan sangat lambat untuk data yang besar. Hal ini diamplifikasi oleh dengan tidak menggunakan compiler optimization.
 
 - Insertion Sort memiliki Kompleksitas waktu $O(n^2)$ walaupun kompleksitasnya sama tetapi pada data set kecil akan lebih cepat daripada Bubble Sort.
 
-- Merge Sort dan Quick Sort memiliki Kompleksitas waktu $O(n log_n)$ dan akan optimal untuk data yang besar.
+- Merge Sort dan Quick Sort memiliki Kompleksitas waktu $O(n _log_n)$ dan akan optimal untuk data yang besar. Algoritma ini juga stabil, sehingga kecepatan sortingnya akan selalu sama pada besar data yang sama.
+
+- Heap sort disini memilki rata rata kecepatan yang signifikan lebih lambat dibanding Mergesort dan quick sort walaupun Heapsort juga memilki kompleksitas waktu O(n logn). Hal ini dapat disebabkan oleh proses Heapification yang memerlukan proses O(1) yang lebih lama dibanding merge sort maupun quick sort. Hal ini dapat dimitigasi dengan menggunakan compiler optimization
 
 - STD Sort akan Memanfaatkan algoritma yang sudah dioptimasi.
 
