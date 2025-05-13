@@ -156,3 +156,8 @@ STD Sort menjadi jenis sorting yang konsisten untuk segala kondisi dan menjadi p
 
 Algoritma Terburuk:
 Bubble Sort adalah algoritma paling tidak efisien akibat banyaknya operasi yang tidak perlu (misalnya, membandingkan elemen yang sudah terurut).
+
+## Grafik perbandingan
+![WhatsApp Image 2025-05-13 at 22.53.19](https://hackmd.io/_uploads/H1gy01WZex.jpg)
+
+![WhatsApp Image 2025-05-13 at 23.01.05](https://hackmd.io/_uploads/r1XJA1-Wgx.jpg)
