@@ -15,7 +15,7 @@
 #include <algorithms/heap_sorter.hpp>
 #include <algorithms/std_sorter.hpp>
 
-#include <map>
+#include <unordered_map>
 #include <functional>
 #include <stdexcept>    
 
@@ -27,29 +27,29 @@
 using SorterCreator = std::function<std::unique_ptr<Sorter>()>;
 
 // Use a static map initialized once to store the mapping from name to creator function.
-static const std::map<std::string, SorterCreator> sorter_registry = {
+static const std::unordered_map<std::string, SorterCreator> sorter_registry = {
     {"bubble", []() -> std::unique_ptr<Sorter> {
-        return std::make_unique<BubbleSorter>(); // Assumes BubbleSorter is defined in bubble_sorter.hpp
+        return std::make_unique<BubbleSorter>();
 //        throw std::runtime_error("SorterFactory: BubbleSorter not yet implemented.");
     }},
     {"insertion", []() -> std::unique_ptr<Sorter> {
-        return std::make_unique<InsertionSorter>(); // Assumes InsertionSorter is defined in insertion_sorter.hpp
+        return std::make_unique<InsertionSorter>();
 //        throw std::runtime_error("SorterFactory: InsertionSorter not yet implemented.");
     }},
     {"merge", []() -> std::unique_ptr<Sorter> {
-        return std::make_unique<MergeSorter>(); // Assumes MergeSorter is defined in merge_sorter.hpp
+        return std::make_unique<MergeSorter>();
 //        throw std::runtime_error("SorterFactory: MergeSorter not yet implemented.");
     }},
     {"quick", []() -> std::unique_ptr<Sorter> {
-        return std::make_unique<QuickSorter>(); // Assumes QuickSorter is defined in quick_sorter.hpp
+        return std::make_unique<QuickSorter>();
 //        throw std::runtime_error("SorterFactory: QuickSorter not yet implemented.");
     }},
     {"heap", []() -> std::unique_ptr<Sorter> {
-        return std::make_unique<HeapSorter>(); // Assumes HeapSorter is defined in heap_sorter.hpp
+        return std::make_unique<HeapSorter>();
 //        throw std::runtime_error("SorterFactory: HeapSorter not yet implemented.");
     }},
     {"std", []() -> std::unique_ptr<Sorter> {
-        return std::make_unique<StdSorter>(); // Assumes StdSorter is defined in std_sorter.hpp
+        return std::make_unique<StdSorter>();
 //        throw std::runtime_error("SorterFactory: StdSorter not yet implemented.");
     }}
 };

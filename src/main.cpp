@@ -10,7 +10,7 @@
 #include <random>
 #include <optional>
 #include <functional>
-#include <map>
+#include <unordered_map>
 
 
 #include <cli_parser.hpp>
@@ -25,7 +25,7 @@ const std::string DEFAULT_CSV_PATH = "worldcities.csv"; // Default path to the d
 using FieldComparatorGenerator = std::function<Sorter::Comparator(bool)>;
 
 // Static map to hold the registry of key strings to their comparator generators
-static const std::map<std::string, FieldComparatorGenerator> comparator_registry = {
+static const std::unordered_map<std::string, FieldComparatorGenerator> comparator_registry = {
     {"name", [](bool reverse_order) -> Sorter::Comparator {
         return [reverse_order](const City& a, const City& b) {
             return reverse_order ? (b.name < a.name) : (a.name < b.name);
